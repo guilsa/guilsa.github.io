@@ -1,0 +1,148 @@
+.about {
+  @include span-columns(12);
+  background: $light;
+
+  &__picture {
+    @include media($screen-small) {
+      max-width: rem(180);
+      margin: 0 auto;
+    }
+  }
+
+  &__column {
+    @include span-columns(6 of 12);
+    padding: $base-spacing;
+
+    @include media($screen-small) {
+      @include span-columns(12);
+      padding: 0;
+      text-align: center;
+    }
+
+    &--img {
+      background: url('../images/guil-picture@2x.jpg') no-repeat top center;
+      background-size: cover;
+      height: rem(470);
+    }
+
+    img {
+      border-radius: 50%;
+    }
+
+  }
+
+  &__title {
+    color: $purple;
+    font-family: $heading-font-family;
+    font-size: rem(50);
+    line-height: rem(50);
+    margin: rem(50) 0 rem(25) 0;
+
+    @include media($screen-small) {
+      text-align: center;
+    }
+
+  }
+
+  &__name {
+    color: $purple;
+    display: block;
+    font-family: $heading-font-family;
+    font-size: rem(50);
+    line-height: rem(40);
+    margin: 10px 40px;
+  }
+
+
+  &__text {
+    @include fill-parent;
+    display: block;
+    float: left;
+    font-size: rem(18);
+    font-weight: 200;
+    line-height: rem(30);
+    margin: 0 0 rem(30);
+
+    @include media($screen-medium) {
+      font-size: rem(15);
+      line-height: rem(20);
+    }
+
+  }
+}
+
+
+.skills {
+  @include span-columns(12);
+  background: url('../images/background-skills.jpg') no-repeat top center $pink;
+  background-size: cover;
+
+  @include media($screen-small) {
+   padding-top: rem(60);
+  }
+
+  &__icons {
+    @include span-columns(12);
+    margin-bottom: rem(50);
+
+    @include media($screen-small) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    @include size(rem(60));
+    float: left;
+    margin-right: 20px;
+
+    svg {
+      @include size(rem(60));
+    }
+  }
+
+  &__column {
+    @include span-columns(4 of 12);
+
+    @include media($screen-small) {
+      @include span-columns(12);
+    }
+  }
+
+  &__box {
+    @include fill-parent;
+    margin-bottom: rem(20);
+  }
+
+  &__title {
+    @include fill-parent;
+    color: $light;
+    font-family: $heading-font-family;
+    font-size: rem(33);
+    margin-bottom: rem(10);
+
+    @include media($screen-medium) {
+      font-size: rem(26);
+    }
+
+    @include media($screen-small) {
+      font-size: rem(22);
+    }
+  }
+
+  &__text {
+    color: $purple;
+    font-size: rem(16);
+    font-weight: 400;
+    max-width: rem(240);
+
+    @include media($screen-medium) {
+      font-size: rem(14);
+    }
+
+    @include media($screen-small) {
+      max-width: 100%;
+    }
+  }
+
+
+}

@@ -1,0 +1,172 @@
+.main-footer {
+  @include span-columns(12);
+  background: darken($purple, 10%);
+
+  @include media($screen-tiny) {
+    height: auto;
+  }
+
+  &--fixed {
+    @include position(fixed, null null 0 0);
+  }
+
+  .wrapper {
+    padding: rem(6) 0;
+  }
+
+  &__contact {
+    @include span-columns(6 of 12);
+    color: $light;
+    font-family: $base-font-family;
+    font-size: rem(12);
+    font-weight: 200;
+    padding-top: 14px;
+
+    @include media($screen-tiny) {
+      @include span-columns(4);
+      text-align: center;
+    }
+
+    .icon {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
+  &__social {
+    @include span-columns(6 of 12);
+    text-align: right;
+
+    @include media($screen-tiny) {
+      @include span-columns(4);
+      text-align: center;
+    }
+
+    .icon {
+      display: inline-block;
+      margin: 15px 10px 0;
+    }
+
+    .icon:hover {
+      path {
+        fill: $pink;
+      }
+
+    }
+  }
+}
+
+
+.contact {
+  @include span-columns(12);
+  background: url('../images/background-purple@2x.jpg') no-repeat top center;
+  background-size: cover;
+  color: $light;
+  text-align: left;
+
+  @include media($screen-small) {
+    padding: $small-spacing 0;
+  }
+
+  &__col1 {
+    @include span-columns(4 of 12);
+  }
+
+  &__col2 {
+    @include span-columns(7 of 12);
+    float: right;
+  }
+
+  &__col1,
+  &__col2 {
+    @include media($screen-small) {
+      @include span-columns(12);
+    }
+  }
+
+  &__title {
+    font-family: $heading-font-family;
+    font-size: rem(40);
+    line-height: rem(40);
+  }
+
+  &__text {
+    font-size: rem(16);
+    font-weight: 200;
+    margin-top: 30px;
+    line-height: rem(30);
+  }
+
+}
+
+.form {
+
+  @include media($screen-small) {
+    margin-top: rem(30);
+  }
+
+  &__group {
+    position: relative;
+    margin-top: rem(20);
+  }
+
+  &__label {
+    transition: all 0.13s ease-out;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: rem(14);
+    z-index: 1;
+
+    &--floated {
+      top: -18px;
+      font-size: rem(11);
+    }
+  }
+
+  &__input {
+    background: none;
+    border: 1px solid $pink;
+    color: $pink;
+    height: rem(40);
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+      border: 1px solid $green;
+    }
+  }
+
+  &__textarea {
+    background: none;
+    border: 1px solid $pink;
+    color: $pink;
+    min-height: rem(100);
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+      border: 1px solid $green;
+    }
+
+  }
+
+  //errors
+
+  &__input,
+  &__textarea {
+    &.error {
+      border: 2px solid $pink;
+    }
+  }
+
+  label.error {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: rem(11);
+    color: #FF3750;
+    font-weight: 200;
+  }
+
+}

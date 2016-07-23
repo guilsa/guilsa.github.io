@@ -1,0 +1,21 @@
+
+
+// Neat Overrides
+$column: 60px;
+$gutter: 23px;
+//$max-width: 990px;
+$max-width: 990px;
+$grid-columns: 12;
+
+// Screen Sizes
+$device-tiny   : 480px;
+$device-small  : 768px;
+$device-medium : 992px;
+$device-big    : 1290px;
+
+// Breakpoints
+$screen-tiny   : new-breakpoint(max-width $device-tiny 4);
+$screen-small  : new-breakpoint(max-width $device-small);
+$screen-medium : new-breakpoint(max-width $device-medium);
+$screen-big    : new-breakpoint(max-width $device-big);
+$screen-only-desktop: new-breakpoint(min-width $device-medium);

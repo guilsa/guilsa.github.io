@@ -1,0 +1,130 @@
+.projects {
+  @include span-columns(12);
+  height: auto !important;
+  background: $light;
+
+  &__heading {
+    @include fill-parent;
+    @include pad(rem(120) 0 0);
+    color: $light;
+    max-height: rem(200);
+    text-align: center;
+
+    @include media($screen-small) {
+      padding: rem(60) 0 rem(30) 0;
+      height: auto;
+    }
+
+  }
+
+  &__title {
+    font-size: rem(45);
+    margin: 0;
+    color: $purple;
+  }
+
+
+  &__grid {
+    @include span-columns(12);
+    margin: rem(20) 0 rem(60);
+
+    @include media($screen-small) {
+      margin: rem(20) 0;
+    }
+
+  }
+
+  &__item {
+    @include omega(3n);
+    @include span-columns(4 of 12);
+    margin-bottom: rem(10);
+    overflow: hidden;
+    position: relative;
+
+    @include media($screen-medium) {
+      @include span-columns(6 of 12);
+      @include omega-reset(3n);
+      @include omega(2n);
+    }
+
+    @include media($screen-tiny) {
+      @include span-columns(4);
+    }
+
+    img {
+      @include transition(all .2s linear);
+      width: 100%;
+    }
+
+    &:hover {
+      .projects__info {
+        height: 100%;
+        opacity: 1;
+      }
+
+      img {
+        float: left;
+        opacity: 1;
+        width: 100%;
+        transform: scale(1.1,1.1);
+      }
+    }
+  }
+
+  &__info {
+    @include position(absolute, 0px null null 0 );
+    @include size(100% 0);
+    background: rgba($purple, .9);
+    color: $light;
+    font-size: rem(24);
+    font-weight: 700;
+    opacity: 0;
+    padding: rem(25) rem(15);
+    text-align: center;
+    transition: all .2s;
+
+    @include media($screen-small) {
+      padding: rem(40);
+    }
+
+    @include media($screen-tiny) {
+      padding: rem(10);
+    }
+
+    .button {
+      @include position(absolute, null 20px 20px null);
+      clear: both;
+      font-family: $base-font-family;
+      text-transform: uppercase;
+    }
+
+  }
+
+  &__project-title {
+    @include span-columns(12);
+    font-family: $heading-font-family;
+    font-size: rem(26);
+    line-height: rem(30);
+    margin-bottom: rem(10);
+
+    @include media($screen-medium) {
+      margin-bottom: rem(10);
+    }
+
+  }
+
+  &__project-resume {
+    @include span-columns(12);
+    font-family: $base-font-family;
+    font-size: rem(12);
+    line-height: rem(20);
+    margin-bottom: rem(10);
+    font-weight: 200;
+
+    @include media($screen-medium) {
+      margin-bottom: 10px;
+    }
+
+  }
+
+}

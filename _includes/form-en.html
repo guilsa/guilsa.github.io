@@ -1,0 +1,28 @@
+<form action="https://formspree.io/guilsa001@gmail.com" method="POST" class="js-form-contact form">
+
+    <input type="hidden" name="_next" value="/sent/" />
+
+    <div class="form__group">
+      <label class="form__label" for="name">Name:</label>
+      <input class="form__input js-input" type="text" name="name" required>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="_replyto">E-mail:</label>
+      <input class="form__input js-input" type="email" name="_replyto" required>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="assunto">Subject:</label>
+      <input class="form__input js-input" type="text" name="assunto" required>
+    </div>
+
+
+    <div class="form__group">
+      <label class="form__label" for="body">Message:</label>
+      <textarea class="form__textarea js-input" name="body" required></textarea>
+    </div>
+
+    <input type="submit" value="Send" class="btn btn--pink btn--right">
+
+</form>

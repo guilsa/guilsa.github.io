@@ -1,0 +1,222 @@
+---
+layout: default
+---
+
+<div id="fullpage" class="fullpage-wrapper">
+
+
+    <section class="section hero">
+      <div class="wrapper">
+
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Hi, I'm <span class="pink">Guil</span>
+          </h1>
+
+          <h2 class="hero__subtitle">
+            Front-end Developer & Agile Project Manager
+          </h2>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section about">
+
+      <div class="wrapper about__content">
+
+        <div class="about__column">
+          <div class="about__picture">
+            <img src="/images/guil-picture@2x.jpg" alt="Guil Sa">
+          </div>
+        </div>
+
+        <div class="about__column">
+
+          <div class="about__description">
+            <h3 class="about__title">About</h3>
+
+            <div class="about__text">
+              Guil Sa, 32 years, graduated in Advertising & P.R. from City University of NY. Experience in projects using the Extreme Programming agile methodology since 2013 and ReactJS/Redux, Ruby, Sinatra and Firebase since 2015. Former client services and digital strategist for two advertising multinationals. Loves cooking, swimming and researching tech trends.<br>
+              <a class="btn btn--right btn--primary" href="/cv-guil-sa.pdf" target="_blank">View resume</a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section skills">
+      <div class="wrapper">
+
+        <div class="skills__column">
+          <div class="skills__box">
+            <div class="skills__icons">
+              <div class="skills__icon">{% include svg/ic-skill-1.svg %}</div>
+              <div class="skills__icon">{% include svg/ic-skill-2.svg %}</div>
+              <div class="skills__icon">{% include svg/ic-skill-3.svg %}</div>
+            </div>
+            <div class="skills__title">Front-end</div>
+            <div class="skills__text">
+              Front-end development of single page apps, websites, e-commerce and systems.
+              <br><br>
+              <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>jQuery</strong>, <strong>ReactJS</strong>, <strong>SASS/BEM</strong>,
+              <strong>Responsive Design</strong>, <strong>Git & Github</strong>, <strong>Bootstrap</strong>, <strong>Webpack</strong>.
+            </div>
+          </div>
+        </div>
+        <div class="skills__column">
+          <div class="skills__box">
+            <div class="skills__title">Agile Development</div>
+            <div class="skills__text">Process managament best practices: <strong>sketching</strong>, <strong>planning poker (scoring)</strong>, <strong>priotization</strong>.</div>
+          </div>
+
+          <div class="skills__box">
+            <div class="skills__title">ReactJS</div>
+            <div class="skills__text">Custom UI components focused on reusability and one-way data flow.</div>
+          </div>
+
+          <div class="skills__box">
+            <div class="skills__title">Redux</div>
+            <div class="skills__text">Front-end architecture.</div>
+          </div>
+
+        </div>
+        <div class="skills__column">
+          <div class="skills__box">
+            <div class="skills__title">Experience</div>
+
+            <div class="experience">
+              <div class="experience__icon">{% include svg/ic_work.svg %}</div>
+              <div class="experience__text">
+                <span class="experience__period"> Aug 2015 - Present</span>
+                <br>Freelance Full-Stack Developer
+              </div>
+            </div>
+            <div class="experience">
+              <div class="experience__icon">{% include svg/ic_work.svg %}</div>
+              <div class="experience__text">
+                <span class="experience__period"> Dec 2013 - Oct 2014</span>
+                <br>Agile Evangelist <a href="http://helabs.com/us/">@helabs</a>
+              </div>
+            </div>
+            <div class="experience">
+              <div class="experience__icon">{% include svg/ic_work.svg %}</div>
+              <div class="experience__text">
+                <span class="experience__period"> Aug 2011 - Jun 2013</span>
+                <br>Project Manager <a href="http://www.aunica.com/ingles.php">@aunica</a>, <a href="http://ignitionone.com">@ignitionone</a>.
+              </div>
+            </div>
+            <div class="experience">
+              <div class="experience__icon">{% include svg/ic_work.svg %}</div>
+              <div class="experience__text">
+                <span class="experience__period"> Aug 2008 - Apr 2011</span>
+                <br>Digital Strategist <a href="http://us.mullenlowe.com/">@mullenlowe</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section projects fp-auto-height fp-normal-scroll">
+
+      <div class="projects__heading">
+
+        <div class="wrapper">
+          <h3 class="projects__title">
+            Portfolio
+          </h3>
+        </div>
+
+      </div>
+
+      <div class="wrapper">
+
+        <div class="projects__grid">
+
+
+          {% for project in site.categories.projects reversed %}
+            <div class="projects__item">
+
+              <img src="{{ project.thumb }}" srcset="{{ project.thumb }} 1x, {{ project.thumb2x }} 2x" alt="{{ project.name }}">
+
+              <div class="projects__info">
+                <span class="projects__project-title">{{ project.name }}</span>
+                <span class="projects__project-resume">{{ project.resume }}</span>
+                <div class="skills-list">{{ project.skills }}</div>
+                <span><a title="{{ project.name }}" target="_blank" href="{{ project.link }}" class="button button--small">View Project</a></span>
+              </div>
+
+            </div>
+          {% endfor %}
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <section class="section contact">
+
+      <div class="wrapper">
+
+        <div class="contact__col1">
+          <h3 class="contact__title">Contact</h3>
+
+          <div class="contact__text">
+            <strong>E-mail:</strong> <a href="mailto:guilsa001@gmail.com">guilsa001@gmail.com</a> <br>
+            <strong>Phone:</strong> 1 650 296-6692 <br>
+            <strong>Skype:</strong> guilherme.i.sa
+          </div>
+
+        </div>
+
+        <div class="contact__col2">
+          {% include form.html %}
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer class="section main-footer fp-auto-height">
+      <div class="wrapper">
+
+        <div class="main-footer__contact">
+          guilsa.github.io | 2016 | ❤
+        </div>
+
+        <div class="main-footer__social">
+          <div class="icon">
+            <a target="_blank" href="https://www.facebook.com/guilsa">{% include svg/ic_facebook.svg %}</a>
+          </div>
+          <div class="icon">
+            <a target="_blank" href="https://www.linkedin.com/in/guilhermeisa">{% include svg/ic_linkedin.svg %}</a>
+          </div>
+          <div class="icon">
+            <a target="_blank" href="https://www.instagram.com/urubuz/">{% include svg/ic_instagram.svg %}</a>
+          </div>
+          <div class="icon">
+            <a target="_blank" href="https://github.com/guilsa">{% include svg/ic_github.svg %}</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+</div>

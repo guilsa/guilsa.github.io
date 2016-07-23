@@ -1,0 +1,155 @@
+* {
+  @include transition(all .2s);
+}
+
+.header {
+  @include span-columns(12);
+  background: $purple;
+  position: fixed;
+  top: 0;
+  transition: all 0.13s ease-out;
+  z-index: 1;
+
+  @include media($screen-small) {
+    background: $purple;
+    height: rem(60);
+  }
+
+  &__content {
+    padding: rem(12) 0;
+
+    @include media($screen-medium) {
+      padding: $small-spacing;
+    }
+  }
+
+  &__brand {
+    @include span-columns(1 of 12);
+
+    @include media($screen-small) {
+      @include span-columns(2);
+      left: 0;
+      position: absolute;
+      text-align: center;
+      top: 10px;
+    }
+
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+      color: $light;
+
+      use {
+        stroke: $light;
+      }
+      svg {
+        @include media($screen-small) {
+          @include size(40px);
+        }
+      }
+    }
+
+  }
+
+
+  &__nav {
+    @include span-columns(10 of 12);
+    float: right;
+    text-align: right;
+    line-height: rem(60);
+
+    @include media($screen-small) {
+      display: none;
+    }
+
+    &--active {
+      @include fill-parent;
+      background: $purple;
+      display: block !important;
+      left: 0;
+      position: fixed;
+      top: 0;
+    }
+
+  }
+
+  &__menu {
+    display: none;
+
+    @include media($screen-small) {
+      display: block;
+    }
+  }
+
+}
+
+
+.nav {
+  @include media($screen-small) {
+    float: left;
+    height: auto;
+    width: 100%;
+  }
+
+  &__item {
+    @include position(relative);
+    display: inline-block;
+    height: 100%;
+    margin: 0 rem(10);
+    text-align: center;
+    transition: all .5s;
+
+    @include media($screen-small) {
+      width: 100%;
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__link {
+    @include pad(rem(10));
+    color: $light;
+    cursor: pointer;
+    font-family: $base-font-family;
+    font-size: rem(16);
+    text-align: center;
+    font-weight: 200;
+    text-transform: uppercase;
+
+    @include media($screen-small) {
+      @include pad(0);
+      display: block;
+      font-family: $base-font-family;
+      font-size: rem(16);
+      width: 100%;
+    }
+  }
+
+  // hover style
+  &__item:hover {
+    a {
+      color: rgba($light, .8);
+    }
+  }
+
+}
+
+
+@-webkit-keyframes menu-hover {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 0
+  }
+  100% {}
+}
+@keyframes menu-hover {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 0
+  }
+  100% {}
+}

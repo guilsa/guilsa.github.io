@@ -1,0 +1,48 @@
+.experience {
+  @include fill-parent;
+  margin-bottom: rem(30);
+
+  @include media($screen-small) {
+     margin-bottom: 0;
+  }
+
+  &__icon {
+    @include fill-parent;
+
+    @include media($screen-small) {
+      display: none;
+    }
+
+    svg {
+      @include size(40px);
+
+      @include media($screen-medium) {
+        @include size(30px);
+      }
+    }
+
+    path {
+      fill: $light;
+    }
+  }
+
+  &__text {
+    color: $purple;
+    font-size: rem(16);
+    font-weight: 400;
+
+    @include media($screen-medium) {
+      font-size: rem(14);
+    }
+  }
+
+  &__period {
+    font-size: rem(20);
+    font-weight: 200;
+
+    @include media($screen-medium) {
+      font-size: rem(14);
+    }
+  }
+
+}

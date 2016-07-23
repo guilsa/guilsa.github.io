@@ -1,0 +1,20 @@
+{
+  "name": "guil",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-sass": "~1.0.0",
+    "grunt-contrib-uglify": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "load-grunt-tasks": "~3.4.0",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^1.7.2",
+    "time-grunt": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=0.10.1",
+    "npm": ">=1.1.0"
+  }
+}

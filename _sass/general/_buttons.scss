@@ -1,0 +1,78 @@
+.btn {
+  @include pad(rem(18) rem(25));
+  text-transform: uppercase;
+  background: transparent;
+  border-radius: 0;
+  border: 1px solid $eclipse;
+  cursor: pointer;
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-weight: 600;
+  margin-top: rem(20);
+  text-align: center;
+
+  &--right {
+    @include media($screen-tiny) {
+      float: right;
+    }
+
+  }
+
+  &--primary{
+    color: $purple;
+    background: transparent;
+    font-weight: 600;
+    border: 1px solid $purple;
+
+    &:hover {
+      color: lighten($purple, 50%);
+      background: transparent;
+    }
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $purple;
+      background: lighten($purple, 90%);
+    }
+  }
+
+  &--pink{
+    color: $light;
+    background: $pink;
+    font-weight: 600;
+    border: 0;
+
+    &:hover {
+      color: $light;
+      background: lighten($pink, 4%);
+    }
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $light;
+    }
+  }
+
+
+}
+
+.button{
+  background: $pink;
+  color: $light;
+  padding: rem(7) rem(14);
+  transition: all .2s;
+
+  &--small {
+    font-size: rem(14) !important;
+  }
+
+  &:hover {
+    background: lighten($pink, 4%);
+    color: $light;
+  }
+}
+
+
+

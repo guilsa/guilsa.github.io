@@ -1,0 +1,85 @@
+.job-list span,
+.skills-list span,
+.tools-list span {
+  display: inline-block;
+  font-family: $base-font-family;
+
+  @include media($screen-medium) {
+    float: none !important;
+    line-height: 22px;
+  }
+
+}
+
+.job-list {
+  @include span-columns(12);
+  margin-bottom: rem(30);
+
+  @include media($screen-medium) {
+    @include span-columns(4 of 12);
+  }
+
+  @include media($screen-small) {
+    @include span-columns(12);
+    margin-bottom: rem(50);
+  }
+
+  &__icon {
+    float: left;
+    width: 80px;
+
+    @include media($screen-medium) {
+      float: none;
+      margin: 0 auto 20px;
+    }
+
+    @include media($screen-tiny) {
+      width: 60px;
+    }
+
+    path,
+    svg {
+      fill: rgba($light, .5);
+    }
+
+    &--active {
+      path {
+        fill: $light;
+      }
+    }
+  }
+
+  &__info {
+    font-family: $base-font-family;
+    font-size: rem(16);
+    line-height: rem(22);
+    color: $light;
+
+    @include media($screen-tiny) {
+      text-align: center;
+    }
+
+    &--primary {
+      font-size: rem(25);
+      font-weight: 200;
+    }
+
+  }
+
+}
+
+.skills-list {
+  @include span-columns(12);
+  text-align: center;
+
+  span {
+    @include pad(rem(4) rem(7));
+    border: 1px solid $light;
+    color: $light;
+    font-size: rem(12);
+    margin: 3px;
+
+
+  }
+}
+
